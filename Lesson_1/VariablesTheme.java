@@ -1,4 +1,5 @@
 class VariablesTheme {
+    
     public static void main(String[] args) {
         System.out.println("\n1. Создание переменных и вывод их значений на консоль\n");
 
@@ -26,8 +27,24 @@ class VariablesTheme {
         double discountAmount = (penPrise + bookPrise) * discount;
         double totalPrise = (penPrise + bookPrise) - discountAmount;
 
-        System.out.println("сумма скидки = " + discountAmount + "руб.");
-        System.out.println("общая стоимость товара = " + totalPrise + "руб.");
+        System.out.println("сумма скидки = " + discountAmount + " руб.");
+        System.out.println("общая стоимость товара = " + totalPrise + " руб.");
+
+        System.out.println("\n3. Отобразите в консоли слово JAVA, как в примере\n");
+
+        char j = 'J';
+        char a = 'a';
+        char v = 'v';
+        char vCapital = 'V';
+
+        System.out.println("   " + j + "    " + a + "  " + v + "     " + v + "  " + a);
+        System.out.println("   " + j + "   " + a + " " + a + "  " + v + "   " 
+                            + v + "  " + a + " "+ a);
+        System.out.println(j + "  " + j + "  " + a + a + a + a + a + "  " 
+                            + vCapital + " " + vCapital + "  " + a + a + a + a + a);
+        System.out.println(" " + j + j + "  " + a + "     " + a + "  " 
+                            + vCapital  + "  " + a + "     " + a);
 
     }
 } 
+
