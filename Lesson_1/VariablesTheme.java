@@ -80,7 +80,7 @@ class VariablesTheme {
         System.out.println("Первая переменная = " + num1  + "\nВторая переменная = " + num2);
         System.out.println("с помощью побитовой операции ^:");
         System.out.println("Первая переменная = " + num1  + "\nВторая переменная = " + num2);
-        num1  ^= num2;
+        num1 ^= num2;
         num2 = num1 ^ num2;
         num1 ^= num2;
         System.out.println("Первая переменная = " + num1 + "\nВторая переменная = " + num2);
@@ -95,8 +95,7 @@ class VariablesTheme {
         System.out.println("Код символа " + (int) ampersand + " Знак ASCII будет " + ampersand);
         System.out.println("Код символа " + (int) at + " Знак ASCII будет " + at);
         System.out.println("Код символа " + (int) caret + " Знак ASCII будет " + caret);
-        System.out.println("Код символа " + (int) underscore + " Знак ASCII будет " 
-                + underscore);
+        System.out.println("Код символа " + (int) underscore + " Знак ASCII будет " + underscore);
 
         System.out.println("\n7. Отображение количества сотен, десятков и единиц числа\n");
         int number = 123;
