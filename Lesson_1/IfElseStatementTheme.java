@@ -4,7 +4,7 @@ class IfElseStatementTheme {
         String name = "Vladimir";
         int age = 33;
         String gender = "male";
-        double growth = 1.79;
+        double heigth = 1.79;
         
         if(age > 20) {
             System.out.println("В темном месте мы находим себя, и лишь знания освещают наш путь");
@@ -16,7 +16,7 @@ class IfElseStatementTheme {
         } else {
             System.out.println("Парни лучшие");
         }
-        if(growth < 1.80) {
+        if(heigth < 1.80) {
             System.out.println("Вы легко достаёте книги с верхней полки");
         } else {
             System.out.println("Вам понадобится стремянка, что бы достать книги");
@@ -42,41 +42,47 @@ class IfElseStatementTheme {
         }
 
         System.out.println("\n3. Работа с числом\n");
-        int numN = -1;
-        if(numN == 0) {
+        int numN = 2;
+        if(numN != 0) {
+            if(numN < 0) {
+                System.out.println("Данное число " + numN + " является отрицательным");
+            } else {
+                System.out.println("Данное число " + numN + " является положительным");
+            }
+            if(numN % 2 == 0) {
+                System.out.println("Данное число " + numN + " четное");
+            } else {
+                System.out.println("Данное число " + numN + " нечетное");
+            }
+        } else {
             System.out.println("Данное число " + numN + " является нулем");
-        } else if(numN < 0) {
-            System.out.println("Данное число " + numN + " является отрицательным");
-        } else {
-            System.out.println("Данное число " + numN + " является положительным");
-        }
-        if((numN % 2) == 0) {
-            System.out.println("Данное число " + numN + " четное");
-        } else {
-            System.out.println("Данное число " + numN + " нечетное");
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах\n");
         int num3 = 171;
         int num4 = 123;
+        int oneNum3 = num3 % 10;
+        int dozesNum3 = (num3 / 10) % 10;
+        int hundredsNum3 = num3 / 100;
+        int oneNum4 = num4 % 10;
+        int dozesNum4 = (num4 / 10) % 10;
+        int hundredsNum4 = num4 / 100;
         System.out.println("Исходные числа: " + num3 + " " + num4);
         if(num3 == num4) {
             System.out.println("Эти числа равны");
         } else {
-            if((num3 % 10) == (num4 % 10)) {
-                System.out.println("В этих числах одинаковые единицы\n" + (num3 % 10) + " " 
-                        + (num4 % 10));
-            } else if(((num3 / 10) % 10) == ((num4 / 10) % 10)) {
-                System.out.println("В этих числах одинаковые десятки\n" + ((num3 / 10) % 10) + " "
-                        + ((num4 / 10) % 10));
-            } else if((num3 / 100) == (num4 / 100)) {
-                System.out.println("В этих числах одинаковы сотни\n" + (num3 / 100) + " " 
-                        +(num4 / 100));
+            if(oneNum3 == oneNum4) {
+                System.out.println("В этих числах одинаковые единицы\n" + oneNum3 + " " + oneNum4);
+            } else if(dozesNum3 == dozesNum4) {
+                System.out.println("В этих числах одинаковые десятки\n" + dozesNum3 + " " + dozesNum4);
+            } else if(hundredsNum3 == hundredsNum4) {
+                System.out.println("В этих числах одинаковы сотни\n" + hundredsNum3 + " " +hundredsNum4);
             }
         }
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду\n");
-        char temp = '\u0057';
+        char temp = 'W';
+        System.out.println("Символ " + temp);
         if(temp > 65 && temp < 91) {
             System.out.println("большая буква");
         } else if(temp > 96 && temp < 123) {
@@ -89,37 +95,32 @@ class IfElseStatementTheme {
 
         System.out.println("\n6. Определение суммы вклада и начисленных банком %\n");
         int contribution = 300_001;
-        if(contribution <= 100_000) {
-            System.out.println("Сумма вклада: " + contribution + " руб.");
-            System.out.println("Начисленный процент: " + (contribution / 100 * 5) + " руб.");
-            System.out.println("Итоговая сумма: " + (contribution + contribution / 100 * 5) + " руб.");
-        } else if(contribution <= 300_000) {
-            System.out.println("Сумма вклада: " + contribution + " руб.");
-            System.out.println("Начисленный процент: " + (contribution / 100 * 7) + " руб.");
-            System.out.println("Итоговая сумма: " + (contribution + contribution / 100 * 7) + " руб.");
-        } else {
-            System.out.println("Сумма вклада: " + contribution + " руб.");
-            System.out.println("Начисленный процент: " + (contribution / 10) + " руб.");
-            System.out.println("Итоговая сумма: " + (contribution + contribution / 10) + " руб.");
+        int percent = contribution / 100 * 5;
+        if (contribution >= 100_000 && contribution <= 300_000) {
+            percent = contribution / 100 * 7;
+        } else if(contribution > 300_000){
+            percent = contribution / 10;
         }
+
+        int accruedInterest = contribution + percent;
+        System.out.println("Сумма вклада: " + contribution + " руб.");
+        System.out.println("Начисленный процент: " + percent + " руб.");
+        System.out.println("Итоговая сумма: " + accruedInterest + " руб.");
 
         System.out.println("\n7. Определение оценки по предметам\n");
         int historyPercent = 59;
-        int historyScore = 0;
-                if(historyPercent <= 60) {
-           historyScore = 2;
-        } else if(historyPercent > 60 && historyPercent < 73) {
+        int historyScore = 2;
+        if(historyPercent > 60 && historyPercent < 73) {
             historyScore = 3;
         } else if(historyPercent > 73 && historyPercent < 91) {
             historyScore = 4;
         } else if(historyPercent >= 91) {
             historyScore = 5;
         }
+
         int programmingPercent = 91;
-        int programmingScore = 0;
-        if(programmingPercent <= 60) {
-           programmingScore = 2;
-        } else if(programmingPercent > 60 && programmingPercent < 73) {
+        int programmingScore = 2;
+        if(programmingPercent > 60 && programmingPercent < 73) {
             programmingScore = 3;
         } else if(programmingPercent > 73 && programmingPercent < 91) {
             programmingScore = 4;
