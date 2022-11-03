@@ -60,7 +60,7 @@ class IfElseStatementTheme {
 
         System.out.println("\n4. Поиск одинаковых цифр в числах\n");
         int num3 = 171;
-        int num4 = 123;
+        int num4 = 173;
         int oneNum3 = num3 % 10;
         int dozesNum3 = (num3 / 10) % 10;
         int hundredsNum3 = num3 / 100;
@@ -81,13 +81,13 @@ class IfElseStatementTheme {
         }
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду\n");
-        char temp = 'W';
-        System.out.println("Символ " + temp);
-        if(temp > 65 && temp < 91) {
+        char uncknownChar = '\u0057';
+        System.out.println("Символ " + uncknownChar);
+        if(uncknownChar > 65 && uncknownChar < 91) {
             System.out.println("большая буква");
-        } else if(temp > 96 && temp < 123) {
+        } else if(uncknownChar > 96 && uncknownChar < 123) {
             System.out.println("маленькая буква");
-        } else if(temp > 48 && temp < 58) {
+        } else if(uncknownChar > 48 && uncknownChar < 58) {
             System.out.println("число");
         } else {
             System.out.println("не буква и не число");
