@@ -1,22 +1,21 @@
 class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("\n1. Подсчет суммы четных и нечетных чисел");
-
-        int start = -10;
-        int stop = 21;
-        int resultX = 0;
-        int resultY = 0;
+        int startRage = -10;
+        int stopRage = 21;
+        int sumEvenNumbers = 0;
+        int sumOddNumbers = 0;
         do {
-            if(start % 2 == 0) {
-                resultX += start;
+            if(startRage % 2 == 0) {
+                sumEvenNumbers += startRage;
             } else {
-                resultY += start;
+                sumOddNumbers += startRage;
             }
-            start++;
-        } while (start <= stop);
+            startRage++;
+        } while (startRage <= stopRage);
 
-        System.out.println("в промежутке [" + start +"," + stop + "] сумма четных чисел = " + resultX + 
-                ", а не четных = " + resultY);
+        System.out.println("в промежутке [" + startRage +"," + stopRage + "] сумма четных чисел = "
+                + sumEvenNumbers + ", а не четных = " + sumOddNumbers);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания");
         int num1 = 10;
@@ -34,31 +33,32 @@ class CyclesTheme {
 
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр");
         int num = 1234;
-        int digitSum = 0;
+        int sumDigit = 0;
         System.out.print("исходное число в обратном порядке ");
         while (num != 0) {
-            int digit = 0;
-            digit = num % 10;
-            digitSum += digit;
+            int digit = num % 10;
+            sumDigit += digit;
             num /= 10;
             System.out.print(digit);
         }
-        System.out.println("\nсумма его цифр " + digitSum);
+        System.out.println("\nсумма его цифр " + sumDigit);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
-        int rageEnd = 24;
-        int count = 0;
-        for (int i = 1; i < rageEnd; i += 2) {
-            count++;
-            System.out.printf("%3d", i);
-            if (count % 5 == 0) {
+        int endRage = 24;
+        int count = 1;
+        for (int i = 1; i < endRage; i += 2) {
+            if (count == 6) {
                 System.out.println();
+                count = 1;
+            }
+            System.out.printf("%3d", i);
+            count++;
+        }
+        if (count <= 6) {
+            for(int i = count; i < 6; i++) {
+                System.out.printf("%3d", 0);
             }
         }
-        while (count % 5 != 0) {
-            System.out.printf("%3d", 0);
-            count++;
-            }
 
         System.out.println("\n5. Проверка количества единиц на четность");
         num = 3242592;
@@ -77,57 +77,55 @@ class CyclesTheme {
         System.out.println(" содержит " + count + " (" + evenOdd + ") количество единиц");
 
         System.out.println("\n6. Отображение фигур в консоли");
-        int symbolStar = 50;
-        int symbolGrind =15;
-        int symbolDolar = 9;
-        for (int i = 1; i < symbolStar; i++) {
-            if (i % 10 != 0) {
-                System.out.print("*");
-            } else {
-                System.out.println();
+        for (int i = 0; i < 5; i++) {
+            for(int j = 0; j < 10; j++) {
+                System.out.print("" + '*');
             }
-        }
-        System.out.println("\n");
-
-        int valueSymbolGrind = 5;
-        int index = 1;
-        while (symbolGrind != 0) {
-        if (index > valueSymbolGrind) {
             System.out.println();
-            index = 0;
-            valueSymbolGrind--;
-            } else {
-                System.out.print("#");
-                symbolGrind--;
-            }
-        index++;
         }
         System.out.println("\n");
 
-        int valueSymbolDolar = 2;
+        int row = 0;
+        int column = 0;
+        count = 5;
+        while (row < 5) {
+            while (column < count) {
+                System.out.print("" + '#');
+                column++;
+            }
+            count -= 1;
+            System.out.println();
+            row++;
+            column = 0;
+        }
+        System.out.println("\n");
+
+        count = 2;
+        int index = 2;
+        column = 9;
         do {
-            System.out.print("$");
-            if (index == valueSymbolDolar) {
-                if (valueSymbolDolar / 4 == 0) {
-                    valueSymbolDolar++;
+            System.out.print('$');
+            if (index == count){
+                if (count / 4 == 0) {
+                count++;
                 } else {
-                    valueSymbolDolar--;
+                count--;
                 }
-                System.out.println();
+                System.out.println("");
                 index = 1;
             }
             index++;
-            symbolDolar--;
-        } while (symbolDolar != 0);
-        System.out.println("\n");
+            column--;
+        } while (column != 0);
 
-        System.out.println("\n7. Отображение ASCII-символов");
+
+        System.out.println("\n\n7. Отображение ASCII-символов");
         System.out.println(" Dec  Char");
         for (int i = 0; i <= 47; i++) {
-            if (i % 2 != 0) System.out.printf("%4d%5c%n", i, (char) i);
+            if (i % 2 != 0) System.out.printf("%4d%5c%n", i, i);
         }
         for (int i = 97; i <= 122; i++) {
-            if (i % 2 == 0) System.out.printf("%4d%5c%n", i, (char) i);
+            if (i % 2 == 0) System.out.printf("%4d%5c%n", i, i);
         }
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
