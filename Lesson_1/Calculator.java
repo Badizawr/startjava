@@ -3,31 +3,29 @@ public class Calculator {
         System.out.println("1.Калькулятор");
         int num1 = 13;
         int num2 = 2;
-        int result = 0;
-        char symbol = '^';
-        switch (symbol) {
+        int result = num1;
+        char sign = '%';
+        switch (sign) {
             case '+':
-                result = num1 + num2;
+                result += num2;
                 break;
             case '-':
-                result = num1 - num2;
+                result -= num2;
                 break;
             case '*':
-                result = num1 * num2;
+                result *= num2;
                 break;
             case '/':
-                result = num1 / num2;
+                result /= num2;
                 break;
             case '%':
                 result = num1 % num2;
                 break;
             case '^':
-                int numN = num1;
                 for(int i = 1; i < num2; i++)
-                    numN *= num1;
-                result = numN;
+                    result *= num1;
                 break;
         }
-        System.out.println(num1 + " " + symbol + " " + num2 + " = " + result);
+        System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
     }
 }
