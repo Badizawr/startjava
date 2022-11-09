@@ -33,15 +33,15 @@ class CyclesTheme {
 
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр");
         int num = 1234;
-        int sumDigit = 0;
+        int sumDigits = 0;
         System.out.print("исходное число в обратном порядке ");
         while (num != 0) {
             int digit = num % 10;
-            sumDigit += digit;
+            sumDigits += digit;
             num /= 10;
             System.out.print(digit);
         }
-        System.out.println("\nсумма его цифр " + sumDigit);
+        System.out.println("\nсумма его цифр " + sumDigits);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
         int endRage = 24;
@@ -60,7 +60,7 @@ class CyclesTheme {
             }
         }
 
-        System.out.println("\n5. Проверка количества единиц на четность");
+        System.out.println("\n\n5. Проверка количества единиц на четность");
         num = 3242592;
         count = 0;
         System.out.print("число " + num);
@@ -83,7 +83,7 @@ class CyclesTheme {
             }
             System.out.println();
         }
-        System.out.println("\n");
+        System.out.println();
 
         int row = 0;
         int column = 0;
@@ -98,7 +98,7 @@ class CyclesTheme {
             row++;
             column = 0;
         }
-        System.out.println("\n");
+        System.out.println();
 
         count = 2;
         int index = 2;
@@ -111,13 +111,12 @@ class CyclesTheme {
                 } else {
                 count--;
                 }
-                System.out.println("");
+                System.out.println();
                 index = 1;
             }
             index++;
             column--;
         } while (column != 0);
-
 
         System.out.println("\n\n7. Отображение ASCII-символов");
         System.out.println(" Dec  Char");
@@ -146,43 +145,37 @@ class CyclesTheme {
 
         System.out.println("\n9.Определение, является ли число счастливым");
         int luckyNum = 131375;
-        int firstHalfNum = luckyNum / 1000;
-        int secondHalfNum = luckyNum % 1000;
-        int sumFirstHalf = 0;
-        int sumSecondHalf = 0;
-        int temp1 = 0;
-        int temp2 = 0;
-        while (firstHalfNum != 0) {
-            temp1 = firstHalfNum % 10;
-            sumFirstHalf += temp1;
-            firstHalfNum /= 10;
+        int topHalfNum = luckyNum / 1000;
+        int bottomHalfNum = luckyNum % 1000;
+        int sumTopHalf = 0;
+        int sumBottomHalf = 0;
+        int digit = 0;
+        while (topHalfNum != 0 && bottomHalfNum != 0) {
+            digit = topHalfNum % 10;
+            sumTopHalf += digit;
+            topHalfNum /= 10;
+            digit = bottomHalfNum % 10;
+            sumBottomHalf += digit;
+            bottomHalfNum /= 10;
         }
-        while (secondHalfNum != 0) {
-            temp2 = secondHalfNum % 10;
-            sumSecondHalf += temp2;
-            secondHalfNum /= 10;
-        }
-        secondHalfNum = luckyNum % 1000;
-        firstHalfNum = luckyNum / 1000;
-        System.out.println("Сумма цифр " + firstHalfNum + " равна " + sumFirstHalf);
-        System.out.println("Сумма цифр " + secondHalfNum + " равна " + sumSecondHalf);
-        System.out.println(sumSecondHalf == sumFirstHalf ? "Число счастливое" : "Число  не счастливое");
+        bottomHalfNum = luckyNum % 1000;
+        topHalfNum = luckyNum / 1000;
+        System.out.println("Сумма цифр " + topHalfNum + " равна " + sumTopHalf);
+        System.out.println("Сумма цифр " + bottomHalfNum + " равна " + sumBottomHalf);
+        System.out.println(sumBottomHalf == sumTopHalf ? "Число счастливое" : "Число не счастливое");
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора");
-        int mult = 0;
-        System.out.print("   " + '|');
+        System.out.print("   |");
         count = 0;
         for(int i = 2; i < 10; i++) {
             System.out.printf("%3d", i);
             count++;
         }
-        System.out.println();
-        System.out.println("---+------------------------");
+        System.out.println("\n---+------------------------");
         for(int j = 2; j < 10; j++) {
             System.out.printf("%2d%2c", j, '|');
             for(int k = 2; k < 10; k++) {
-                mult = j * k;
-                System.out.printf("%3d", mult);
+                System.out.printf("%3d", j * k);
             }
             System.out.println();
         }
