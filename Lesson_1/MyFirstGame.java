@@ -7,7 +7,7 @@ public class MyFirstGame {
         String input;
         String str = "";
         int playerNum;
-        int compNum = rnd.nextInt(1,101);
+        int compNum = rnd.nextInt(1, 101);
         int count = 1;
         do {
             input = showInputDialog("Угадай число:");
@@ -19,8 +19,8 @@ public class MyFirstGame {
             } else {
                 str = ("Вы победили, для этого вам понадобилось " + count + " ходов");
             }
-        showMessageDialog(null, str);
-        count++;
+            showMessageDialog(null, str);
+            count++;
         } while (playerNum != compNum);
     }
 }
