@@ -79,7 +79,7 @@ class CyclesTheme {
         System.out.println("\n6. Отображение фигур в консоли");
         for (int i = 0; i < 5; i++) {
             for(int j = 0; j < 10; j++) {
-                System.out.print("" + '*');
+                System.out.print(" *");
             }
             System.out.println();
         }
@@ -90,7 +90,7 @@ class CyclesTheme {
         count = 5;
         while (row < 5) {
             while (column < count) {
-                System.out.print("" + '#');
+                System.out.print(" #");
                 column++;
             }
             count -= 1;
@@ -106,13 +106,13 @@ class CyclesTheme {
         do {
             System.out.print('$');
             if (index == count){
-                if (count / 4 == 0) {
-                count++;
-                } else {
-                count--;
-                }
-                System.out.println();
-                index = 1;
+                    if (count / 4 == 0) {
+                    count++;
+                    } else {
+                    count--;
+                    }
+                    System.out.println();
+                    index = 1;
             }
             index++;
             column--;
@@ -150,8 +150,8 @@ class CyclesTheme {
         int sumTopHalf = 0;
         int sumBottomHalf = 0;
         int digit = 0;
-        while (topHalfNum != 0 && bottomHalfNum != 0) {
-            digit = topHalfNum % 10;
+        while (bottomHalfNum != 0) {
+            digit = topHalfNum % 10
             sumTopHalf += digit;
             topHalfNum /= 10;
             digit = bottomHalfNum % 10;
